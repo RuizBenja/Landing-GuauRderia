@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guarderia — Reservas de Hotel para Perritos</title>
+  <meta name="description"
+    content="Hotel boutique para perritos con cuidado 24/7, reportes diarios y espacios seguros. Reserva en 1 minuto." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <img class="brand__logoImg" src="assets/icons/guaurderia.png" alt="GuauRdería" />
+      </a>
+
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#beneficios">Beneficios</a>
+        <a href="#planes">Planes</a>
+        <a href="#galeria">Galería</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#testimonios">Reseñas</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="topbar__cta">
+        <a class="btn btn--ghost" href="#reserva">Ver disponibilidad</a>
+        <a class="btn btn--whatsapp" id="btnWhatsappTop" href="#" rel="noopener">
+          <img src="assets/icons/whatsapp.png" class="waIcon" alt="" aria-hidden="true">
+          WhatsApp
+        </a>
+
+
+      </div>
+
+      <button class="burger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobilemenu" hidden>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#planes">Planes</a>
+      <a href="#galeria">Galería</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#testimonios">Reseñas</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn--ghost" href="#reserva">Ver disponibilidad</a>
+      <a class="btn btn--whatsapp" id="btnWhatsappMobile" href="#" rel="noopener">
+        <img src="assets/icons/whatsapp.png" class="waIcon" alt="" aria-hidden="true">
+        WhatsApp
+      </a>
+
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero hero--pet">
+       <canvas class="sparkCanvas" id="sparkCanvas"></canvas>
+      <div class="container petHero">
+        <div class="petHero__copy">
+
+          <h1 class="reveal">
+            Donde tu perrito
+            <span class="gradient">se relaja de verdad</span>
+          </h1>
+
+          <p class="lead reveal">Cuidado 24/7 + rutina tranquila + fotos diarias por WhatsApp.</p>
+
+          <div class="petHero__actions reveal">
+            <a class="btn btn--primary btn--xl" href="#reserva">Reservar</a>
+            <button class="btn btn--soft btn--xl" id="btnPetDemo" type="button">Probar experiencia</button>
+            <a class="btn btn--ghost btn--xl" href="#planes">Precios</a>
+          </div>
+
+          <div class="petHero__mini reveal">
+            <span class="miniTag">Zonas por tamaño</span>
+            <span class="miniTag">Supervisión 24/7</span>
+            <span class="miniTag">Reporte diario</span>
+          </div>
+        </div>
+
+        
+          <div class="petHero__toy reveal">
+            <div class="heroVisual" aria-hidden="true">
+              <!-- (JS después) aquí irá el canvas de estrellas -->
+              
+
+              <!-- Glow / fondo suave para mezclar con la imagen -->
+              <div class="heroGlow"></div>
+
+              <!-- Imagen principal -->
+              <img class="heroDogImg" src="assets/icons/neon-dog-cutout2.png" alt="GuauRdería Premium">
+            </div>
+          </div>
+        
+
+      </div>
+    </section>
+
+    <section id="beneficios" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="reveal">Todo pensado para su comodidad</h2>
+          <p class="reveal">Una experiencia boutique: seguridad, cariño y estructura.</p>
+        </div>
+
+        <div class="grid3">
+          <article class="feature reveal">
+            <div class="feature__icon">
+              <img src="assets/icons/seguridadprimero.png" alt="Seguridad primero" loading="lazy" />
+            </div>
+            <h3>Seguridad primero</h3>
+            <p>Ingreso con vacunas al día, zonas por tamaño y supervisión constante.</p>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__icon">
+              <img src="assets/icons/reportesdiarios.png" alt="Reportes diarios" loading="lazy" />
+            </div>
+            <h3>Reportes diarios</h3>
+            <p>Te enviamos fotos y actualización de ánimo, comida y paseos.</p>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__icon">
+              <img src="assets/icons/ambientetranquilo.png" alt="Ambiente tranquilo" loading="lazy" />
+            </div>
+            <h3>Ambiente tranquilo</h3>
+            <p>Espacios ventilados, rutinas claras y descanso real (sin estrés).</p>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__icon">
+              <img src="assets/icons/paseos.png" alt="Paseos y juego" loading="lazy" />
+            </div>
+            <h3>Paseos + juego</h3>
+            <p>Actividades guiadas según energía y temperamento del perrito.</p>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__icon">
+              <img src="assets/icons/higiene.png" alt="Higiene premium" loading="lazy" />
+            </div>
+            <h3>Higiene premium</h3>
+            <p>Sanitización diaria, textiles lavables y control de olores.</p>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__icon">
+              <img src="assets/icons/soporteveterinario.png" alt="Soporte veterinario" loading="lazy" />
+            </div>
+            <h3>Soporte veterinario</h3>
+            <p>Red de clínicas cercanas y protocolos ante cualquier imprevisto.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="planes" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="reveal">Planes claros, sin letra chica</h2>
+          <p class="reveal">Elige lo que necesitas hoy. Puedes subir de plan en cualquier momento.</p>
+        </div>
+
+        <div class="pricing">
+          <article class="pricecard reveal">
+            <div class="pricecard__top">
+              <h3>Guardería</h3>
+              <p>Para días ocupados</p>
+              <div class="price"><span>Desde</span> $18.000 <small>/día</small></div>
+            </div>
+            <ul class="list">
+              <li>2 bloques de juego</li>
+              <li>Paseo guiado</li>
+              <li>Foto del día</li>
+              <li>Snacks (si autorizas)</li>
+            </ul>
+            <a class="btn btn--soft btn--block" href="#reserva">Reservar guardería</a>
+          </article>
+
+          <article class="pricecard  reveal">
+            <div class="ribbon">Más elegido</div>
+            <div class="pricecard__top">
+              <h3>Estadía Boutique</h3>
+              <p>Para viajes y vacaciones</p>
+              <div class="price"><span>Desde</span> $32.000 <small>/noche</small></div>
+            </div>
+            <ul class="list">
+              <li>Supervisión 24/7</li>
+              <li>Reporte diario con fotos</li>
+              <li>Paseos diarios</li>
+              <li>Zonas por tamaño</li>
+              <li>Prioridad en cupos</li>
+            </ul>
+            <a class="btn btn--primary btn--block" href="#reserva">Reservar estadía</a>
+          </article>
+
+          <article class="pricecard reveal">
+            <div class="pricecard__top">
+              <h3>Spa &amp; Baño</h3>
+              <p>Queda impecable</p>
+              <div class="price"><span>Desde</span> $22.000 <small>/sesión</small></div>
+            </div>
+            <ul class="list">
+              <li>Baño + secado</li>
+              <li>Corte de uñas (opcional)</li>
+              <li>Perfume hipoalergénico</li>
+              <li>Foto “antes y después”</li>
+            </ul>
+            <a class="btn btn--soft btn--block" href="#reserva">Agendar spa</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="reveal">Galería</h2>
+          <p class="reveal">Un vistazo a nuestro espacio (clic para ampliar).</p>
+        </div>
+
+        <div class="gallery reveal" id="gallery">
+          <button class="gitem"
+            data-src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1600&q=80"
+            aria-label="Ver foto 1">
+            <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=900&q=80"
+              alt="Perrito feliz" />
+          </button>
+
+          <button class="gitem"
+            data-src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1600&q=80"
+            aria-label="Ver foto 2">
+            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=900&q=80"
+              alt="Perrito descansando" />
+          </button>
+
+          <button class="gitem"
+            data-src="https://images.unsplash.com/photo-1525253086316-d0c936c814f8?auto=format&fit=crop&w=1600&q=80"
+            aria-label="Ver foto 3">
+            <img src="https://images.unsplash.com/photo-1525253086316-d0c936c814f8?auto=format&fit=crop&w=900&q=80"
+              alt="Perritos jugando" />
+          </button>
+
+          <button class="gitem"
+            data-src="https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=1600&q=80"
+            aria-label="Ver foto 4">
+            <img src="https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=900&q=80"
+              alt="Cuidado premium" />
+          </button>
+
+          <button class="gitem"
+            data-src="https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=1600&q=80"
+            aria-label="Ver foto 5">
+            <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=900&q=80"
+              alt="Espacio y tranquilidad" />
+          </button>
+
+          <button class="gitem"
+            data-src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1600&q=80"
+            aria-label="Ver foto 6">
+            <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=900&q=80"
+              alt="Hotel para perritos" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="recinto" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="reveal">Así luce el recinto</h2>
+          <p class="reveal">Espacios reales, limpios y separados por tamaño y energía.</p>
+        </div>
+
+        <div class="gallery reveal" id="facilityGallery">
+          <button class="gitem"
+            data-src="assets/recinto/6810-W-Sahara-Ave-41-scaled.jpg"
+            aria-label="Ver pasillo con boxes individuales">
+            <img
+              src="assets/recinto/6810-W-Sahara-Ave-41-scaled.jpg"
+              alt="Pasillo vidriado con boxes individuales higienizados" />
+          </button>
+
+          <button class="gitem"
+            data-src="assets/recinto/BLOG_-_PetSuites_dog_boarding_blog_dog_in_luxury_suite.jpg"
+            aria-label="Ver suite con cama elevada">
+            <img
+              src="assets/recinto/BLOG_-_PetSuites_dog_boarding_blog_dog_in_luxury_suite.jpg"
+              alt="Suites individuales con cama elevada y bebedero" />
+          </button>
+
+          <button class="gitem"
+            data-src="assets/recinto/kennels-large1.jpeg"
+            aria-label="Ver boxes amplios">
+            <img
+              src="assets/recinto/kennels-large1.jpeg"
+              alt="Box acolchado con manta limpia y ventilación" />
+          </button>
+
+          <button class="gitem"
+            data-src="assets/recinto/trad-double.jpg"
+            aria-label="Ver doble kennel higienizado">
+            <img
+              src="assets/recinto/trad-double.jpg"
+              alt="Área limpia con separadores y piso sanitizable" />
+          </button>
+
+          <button class="gitem"
+            data-src="assets/recinto/NVA_-_K9s_Only_-_Dog_HotelBoarding.webp"
+            aria-label="Ver área interior ventilada">
+            <img
+              src="assets/recinto/NVA_-_K9s_Only_-_Dog_HotelBoarding.webp"
+              alt="Pasillo higienizado con luz natural y ventilación" />
+          </button>
+
+          <button class="gitem"
+            data-src="assets/recinto/Pet_Paradise_Dripping_Spring_Tiny_Town.jpg"
+            aria-label="Ver zona de descanso individual">
+            <img
+              src="assets/recinto/Pet_Paradise_Dripping_Spring_Tiny_Town.jpg"
+              alt="Zona de descanso elevada con cuna acolchada" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="ubicacion" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="reveal">Ubicación</h2>
+          <p class="reveal">Llegar es fácil. También ofrecemos retiro a domicilio (opcional).</p>
+        </div>
+
+        <div class="location">
+          <div class="location__info reveal">
+            <div class="card glass">
+              <h3>Estamos cerca de ti</h3>
+              <p class="muted">
+                Cambia esta info por tu dirección real. Puedes poner “por seguridad entregamos dirección al confirmar”.
+              </p>
+
+              <div class="locgrid">
+                <div class="locbox">
+                  <strong>Dirección</strong>
+                  <span class="muted">Tu comuna · (dirección al confirmar)</span>
+                </div>
+                <div class="locbox">
+                  <strong>Horario</strong>
+                  <span class="muted">Lun–Dom · 9:00–19:00</span>
+                </div>
+                <div class="locbox">
+                  <strong>Ingreso</strong>
+                  <span class="muted">Vacunas al día + sociabilización</span>
+                </div>
+                <div class="locbox">
+                  <strong>Contacto</strong>
+                  <span class="muted">WhatsApp directo</span>
+                </div>
+              </div>
+
+              <button class="btn btn--primary btn--block" id="btnWhatsappLocation" type="button">
+                Preguntar disponibilidad
+              </button>
+            </div>
+          </div>
+
+          <div class="location__map reveal">
+            <div class="mapWrap glass">
+              <iframe title="Mapa GuauRdería" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=Santiago%20Chile&output=embed"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonios" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="reveal">Reseñas reales (y perritos felices)</h2>
+          <p class="reveal">Lo que más nos importa: confianza.</p>
+        </div>
+
+        <div class="reviews">
+          <article class="review reveal">
+            <div class="review__stars">★★★★★</div>
+            <p>“Me mandaron fotos todos los días. Mi perrita volvió tranquila y feliz, cero estrés.”</p>
+            <div class="review__who">
+              <span class="avatar">M</span>
+              <div>
+                <strong>María</strong>
+                <small class="muted">Estadía · 4 noches</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="review reveal">
+            <div class="review__stars">★★★★★</div>
+            <p>“Se nota el cariño. Separan por tamaño y son súper ordenados. Recomiendo 100%.”</p>
+            <div class="review__who">
+              <span class="avatar">J</span>
+              <div>
+                <strong>Javier</strong>
+                <small class="muted">Guardería · 3 días</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="review reveal">
+            <div class="review__stars">★★★★★</div>
+            <p>“El spa quedó increíble. Olor suave, pelaje brillante. Y me mandaron el antes/después.”</p>
+            <div class="review__who">
+              <span class="avatar">C</span>
+              <div>
+                <strong>Camila</strong>
+                <small class="muted">Spa · 1 sesión</small>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reserva" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="reveal">Reserva ahora</h2>
+          <p class="reveal">Rápido, claro y sin llamadas. Te confirmamos por WhatsApp.</p>
+        </div>
+
+        <div class="booking">
+          <div class="booking__left reveal">
+            <h3>¿Qué incluye la reserva?</h3>
+            <ul class="checklist">
+              <li>Confirmación inmediata (si hay cupo)</li>
+              <li>Checklist de ingreso (vacunas + recomendaciones)</li>
+              <li>Canal directo por WhatsApp</li>
+              <li>Opciones de alimentación y medicación</li>
+            </ul>
+          </div>
+
+          <div class="booking__right reveal">
+            <form id="bookingForm" class="form card glass">
+              <div class="form__row">
+                <label>
+                  Nombre
+                  <input type="text" name="owner" placeholder="Tu nombre" minlength="2" required />
+                </label>
+                <label>
+                  WhatsApp
+                  <input type="tel" name="phone" placeholder="+56 9 1234 5678" required />
+                </label>
+              </div>
+
+              <div class="form__row">
+                <label>
+                  Nombre del perrito
+                  <input type="text" name="dogName" placeholder="Ej: Luna" minlength="2" required />
+                </label>
+                <label>
+                  Tamaño
+                  <select name="size" required>
+                    <option value="pequeno">Pequeño (≤ 10 kg)</option>
+                    <option value="mediano">Mediano (10–25 kg)</option>
+                    <option value="grande">Grande (≥ 25 kg)</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="form__row">
+                <label>
+                  Servicio
+                  <select name="plan" required>
+                    <option value="estadia">Estadía</option>
+                    <option value="guarderia">Guardería (día)</option>
+                    <option value="spa">Spa &amp; Baño</option>
+                  </select>
+                </label>
+                <label>
+                  Comentarios
+                  <input type="text" name="notes" placeholder="Alergias, medicación, etc. (opcional)" />
+                </label>
+              </div>
+
+              <div class="form__row">
+                <label>
+                  Entrada
+                  <input type="date" name="start" required />
+                </label>
+                <label>
+                  Salida
+                  <input type="date" name="end" required />
+                </label>
+              </div>
+
+              <div class="estimate estimate--compact">
+                <div>
+                  <div class="estimate__label">Total estimado</div>
+                  <div class="estimate__value" id="totalValue">$0</div>
+                </div>
+                <div class="estimate__meta" id="totalMeta">Completa fechas y plan</div>
+              </div>
+
+              <button class="btn btn--primary btn--block" type="submit">Enviar solicitud de reserva</button>
+
+              <button class="btn btn--ghost btn--block" id="btnWhatsappForm" type="button">
+                Prefiero reservar por WhatsApp
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="reveal">Preguntas frecuentes</h2>
+          <p class="reveal">Transparencia total para que reserves con confianza.</p>
+        </div>
+
+        <div class="faq">
+          <details class="faq__item reveal">
+            <summary>¿Qué requisitos piden para ingresar?</summary>
+            <p>Vacunas al día, desparasitación y sociabilización básica. Te enviamos checklist al reservar.</p>
+          </details>
+
+          <details class="faq__item reveal">
+            <summary>¿Puedo llevar su comida?</summary>
+            <p>Sí. Ideal si tiene dieta especial. También ofrecemos alimentación estándar (con autorización).</p>
+          </details>
+
+          <details class="faq__item reveal">
+            <summary>¿Cómo me reportan?</summary>
+            <p>Por WhatsApp: fotos, ánimo, paseos y cómo comió. Frecuencia diaria (o más si lo necesitas).</p>
+          </details>
+
+          <details class="faq__item reveal">
+            <summary>¿Hay devolución si cancelo?</summary>
+            <p>Como no cobramos por adelantado aquí, solo pedimos avisar con tiempo para liberar cupo.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div>
+          <div class="brand brand--footer">
+            <img class="brand__logoImg brand__logoImg--footer" src="assets/icons/guaurderia.png" alt="GuauRdería">
+          </div>
+          <p class="muted">Hotel boutique para perritos con foco en bienestar, seguridad y cariño.</p>
+          <div class="social">
+            <a href="#reserva">Reservas</a>
+            <a href="#galeria">Galería</a>
+            <a href="#ubicacion">Ubicación</a>
+          </div>
+        </div>
+
+        <div class="footer__box">
+          <strong>Atención</strong>
+          <p class="muted">Lun–Dom · 9:00–19:00</p>
+          <button class="btn btn--primary btn--block" id="btnWhatsappFooter" type="button">
+            Hablar por WhatsApp
+          </button>
+          <small class="muted">© <span id="year"></span> GuauRdería</small>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <div class="modal" id="lightbox" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel modal__panel--img" role="dialog" aria-modal="true" aria-label="Imagen">
+      <button class="modal__close" aria-label="Cerrar" data-close>✕</button>
+      <img id="lightboxImg" alt="Imagen ampliada" />
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden>
+    <div class="toast__inner" id="toastMsg">Listo</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
