@@ -399,12 +399,49 @@ function init() {
   initGallery();
   initBookingForm();
   initPetHeroToy();
+  initNavDropdown();
 
   const year = $("#year");
   if (year) year.textContent = String(new Date().getFullYear());
 }
 
 init();
+
+// ===== Nav Dropdown
+function initNavDropdown(){
+  const dd = document.querySelector(".nav__dropdown");
+  if (!dd) return;
+  const trigger = dd.querySelector(".nav__trigger");
+  const menu = dd.querySelector(".nav__menu");
+  if (!trigger || !menu) return;
+
+  const close = () => {
+    dd.classList.remove("is-open");
+    trigger.setAttribute("aria-expanded", "false");
+  };
+  const open = () => {
+    dd.classList.add("is-open");
+    trigger.setAttribute("aria-expanded", "true");
+  };
+
+  trigger.addEventListener("click", (e) => {
+    const isOpen = dd.classList.contains("is-open");
+    isOpen ? close() : open();
+    e.stopPropagation();
+  });
+
+  menu.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => close());
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!dd.contains(e.target)) close();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
+}
 
 /* =========================
    SPARKLES CANVAS (FULL HERO)
