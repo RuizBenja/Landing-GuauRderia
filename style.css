@@ -617,11 +617,45 @@ h1 {
 }
 
 .review {
+  position: relative;
   padding: 18px;
-  border-radius: var(--radius);
+  border-radius: calc(var(--radius) + 2px);
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.20);
+  overflow: hidden;
+  transform: translateY(0) scale(1);
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+
+.review::before{
+  content:"";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(700px 450px at 24% 16%, rgba(175, 66, 255, 0.28), transparent 55%),
+    linear-gradient(135deg, rgba(175,66,255,.12), rgba(45,212,191,.10));
+  opacity: 0;
+  transition: opacity .40s ease;
+  pointer-events: none;
+}
+
+.review:hover{
+  transform: translateY(-8px) scale(1.04);
+  border-color: rgba(175, 66, 255, 0.35);
+  box-shadow: 0 22px 70px rgba(0,0,0,0.38);
+  z-index: 3;
+}
+.review:hover::before{ opacity: 1; }
+
+.reviews:hover .review{
+  transform: translateY(0) scale(0.99);
+  opacity: 0.92;
+}
+.reviews:hover .review:hover{
+  transform: translateY(-8px) scale(1.04);
+  opacity: 1;
 }
 
 .review__stars { letter-spacing: 2px; }
