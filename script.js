@@ -154,10 +154,23 @@ function initReveal() {
 function initGallery() {
   const lightbox = $("#lightbox");
   const img = $("#lightboxImg");
-  if (!lightbox || !img) return;
+  const navPrev = $(".lightbox__nav--prev");
+  const navNext = $(".lightbox__nav--next");
+  const panel = $(".modal__panel--img");
+  if (!lightbox || !img || !panel) return;
 
-  const open = (src) => {
-    img.src = src;
+  const items = $$(".gitem");
+  let currentIndex = -1;
+
+  const show = (idx) => {
+    if (!items.length) return;
+    currentIndex = (idx + items.length) % items.length;
+    const src = items[currentIndex].getAttribute("data-src");
+    if (src) img.src = src;
+  };
+
+  const open = (idx) => {
+    show(idx);
     lightbox.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
   };
@@ -166,21 +179,56 @@ function initGallery() {
     lightbox.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
     img.src = "";
+    currentIndex = -1;
   };
 
-  $$(".gitem").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const src = btn.getAttribute("data-src");
-      if (src) open(src);
-    });
+  items.forEach((btn, i) => {
+    btn.addEventListener("click", () => open(i));
   });
+
+  navPrev?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    show(currentIndex - 1);
+  });
+  navNext?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    show(currentIndex + 1);
+  });
+
+  // Click en mitades izquierda/derecha de la imagen para navegar
+  panel.addEventListener("click", (e) => {
+    if (e.target.matches("[data-close]")) return;
+    const rect = panel.getBoundingClientRect();
+    const x = e.clientX;
+    if (x < rect.left + rect.width / 2) show(currentIndex - 1);
+    else show(currentIndex + 1);
+  });
+
+  // Swipe móvil
+  let touchStartX = null;
+  panel.addEventListener("touchstart", (e) => {
+    touchStartX = e.changedTouches?.[0]?.clientX ?? null;
+  }, { passive: true });
+
+  panel.addEventListener("touchend", (e) => {
+    if (touchStartX === null) return;
+    const x = e.changedTouches?.[0]?.clientX ?? touchStartX;
+    const delta = x - touchStartX;
+    const threshold = 40;
+    if (delta > threshold) show(currentIndex - 1);
+    else if (delta < -threshold) show(currentIndex + 1);
+    touchStartX = null;
+  }, { passive: true });
 
   lightbox.addEventListener("click", (e) => {
     if (e.target && e.target.matches("[data-close]")) close();
   });
 
   window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && lightbox.getAttribute("aria-hidden") === "false") close();
+    if (lightbox.getAttribute("aria-hidden") === "true") return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft") show(currentIndex - 1);
+    if (e.key === "ArrowRight") show(currentIndex + 1);
   });
 }
 
