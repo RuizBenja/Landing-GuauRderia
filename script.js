@@ -610,13 +610,11 @@ init();
 
   window.addEventListener("resize", resize);
   const onPointerDown = (e) => {
-    if (e.pointerType === "touch" || e.pointerType === "pen") e.preventDefault();
     hero.setPointerCapture?.(e.pointerId);
     onMove(e);
   };
 
   const onPointerMove = (e) => {
-    if (e.pointerType === "touch" || e.pointerType === "pen") e.preventDefault();
     onMove(e);
   };
 

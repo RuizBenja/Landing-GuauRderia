@@ -1051,7 +1051,7 @@ body::after{
 .hero--pet{
   position: relative;
   overflow: hidden; /* para que no se salga de la sección */
-  touch-action: none; /* permite dibujar con el dedo sin hacer scroll */
+  touch-action: pan-y; /* permite scroll vertical en móvil y aún captura movimiento */
 }
 
 .sparkCanvas{
