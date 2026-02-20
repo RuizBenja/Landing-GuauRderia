@@ -100,20 +100,20 @@ a { color: inherit; text-decoration: none; }
 }
 
 .brand__logoImg{
-  height: 70px;
+  height: 80px;
   width: auto;
   display: block;
   object-fit: contain;
 }
 .brand__logoImg--footer{
-  height: 72px;
+  height: 86px;
   width: auto;
   display: block;
 }
 
 @media (max-width: 520px){
   .brand__logoImg--footer{
-    height: 68px;
+    height: 82px;
   }
 }
 
@@ -1026,7 +1026,7 @@ input:focus, select:focus {
 }
 
 @media (max-width: 960px){
-  .brand__logoImg{ height: 30px; }
+  .brand__logoImg{ height: 38px; }
 }
 
 @media (max-width: 520px) {
